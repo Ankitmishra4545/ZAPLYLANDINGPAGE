@@ -1,114 +1,165 @@
 body {
+  background-color: #fbf9f5;;; /* Match the cream color of the image background */
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: white;
-  height: 100vh;
-  position: relative;
-  background: white;
 }
 
-/* Z-Shape background with cream color */
-.z-shape {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
+.image-right {
+  display: flex;
+  justify-content: flex-end; /* Aligns the image to the right */
+  margin-left: 700px; /* Add space from the right edge */
+  max-width: 40%;
+  margin-top: -310px;
+}
+.image-style {
+  width: 100%; /* Ensures the image fills the container */
+  height: auto; /* Maintains aspect ratio */
 }
 
-
-.z-shape::before, .z-shape::after {
-  content: '';
-  position: absolute;
-  background-color: #f5f5dc; /* Light cream color */
-}
-
-/* Top line of the Z */
-.z-shape::before {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 20%;
-}
-
-/* Diagonal of the Z */
-.z-shape::after {
-  top: 20%;
-  width: 100%;
-  height: 60%;
-  transform: skewY(-20deg);
-}
-
-/* Bottom line of the Z */
-.bottom-line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20%;
-  background-color: #f5f5dc;
+.image-right img {
+  max-width: 400px; /* Adjust image size */
+  height: auto;
 }
 
 header {
-  position: relative;
-  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px;
 }
 
-/* Zaply Logo aligned to the left */
 .logo {
-  margin-left: 20px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-/* Navigation bar styling */
-nav {
+.logo-img {
+  width: 150px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+.nav-links {
+  list-style: none;
   display: flex;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 15px;
 }
 
-nav a {
-  color: #333;
+.nav-links li a {
   text-decoration: none;
-  font-size: 16px;
+  color: black;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
 }
 
-.download-btn {
-  background-color: #ff69b4;
-  color: white;
-  padding: 10px 20px;
+.nav-links li a:hover {
+  background-color: pink; /* Change to pink on hover */
+}
+.search-download {
+  display: flex;
+  flex-direction: column; /* Stack search form and download button */
+  align-items: flex-start; /* Align to the left */
+}
+
+.search-form {
+  display: flex;
+}
+
+.search-form input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px; /* Set a fixed width for the search input */
+}
+
+.search-button {
+  background: none;
   border: none;
+  cursor: pointer;
+  padding: 0 5px;
+}
+.download-button {
+  background-color: #e6007e; /* Dark pink */
+  border: none;
+  color: white;
+  padding: 10px 0; /* Adjust vertical padding to match the search input */
   border-radius: 5px;
   cursor: pointer;
+  width: 200px; /* Set width equal to the search form */
+  margin-top: 5px; /* Space between search form and download button */
+}
+.download-button:hover {
+  background-color: #c7006e; /* Even darker pink on hover */
 }
 
-.download-btn:hover {
-  background-color: #ff1493;
+.tagline {
+  text-align: left; /* Align text to the left */
+  font-weight: bold;  /* Make all text bold */
+  text-transform: uppercase; /* All capital letters */
+  font-size: 36px; /* Increase the font size */
+  margin-left: 20px; /* Add some left margin for spacing */
 }
 
-/* Search box */
-.search-box {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 10px;
-  right: 40px;
+
+.pink {
+  color: rgb(232, 49, 205); /* Pink color for specified letters */
+  margin-left: 35px;
 }
 
-.search-box input[type="text"] {
-  padding: 6px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 120px;
-  background-image: url('https://img.icons8.com/ios-glyphs/30/search.png');
-  background-size: 18px;
-  background-repeat: no-repeat;
-  background-position: 95% center;
-  padding-right: 30px;
+.orange {
+  color: rgb(255, 42, 0); /* Orange color for specified letters */
+  margin-left: 30px;
+  
+}
+
+.light-blue {
+  color: rgb(28, 222, 229); /* Light blue color for specified letters */
+  margin-left: 60px;
+}
+.blue {
+  color: rgb(28, 222, 229); /* First word in blue */
+  margin-left: 35px;
+}
+p{
+  margin-left: 45px;
+}
+
+.zap-ready {
+  text-align: right; /* Aligns the text to the right */
+  font-weight: bold; /* Makes the font bold */
+  font-size: 24px; /* Adjusts the font size (change as needed) */
+  margin-top: 60px; /* Adds space between the image and this text */
+  margin-right: 80px;
+}
+
+.orange {
+  color: rgb(255, 81, 0); /* Sets the color for the first word */
+}
+
+.pink {
+  color: rgb(245, 12, 160); /* Sets the color for the second word */
+}
+
+.light-blue {
+  color: rgb(32, 228, 222); /* Sets the color for the third word */
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .search-download {
+      flex-direction: column;
+      align-items: flex-start;
+  }
 }
