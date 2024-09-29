@@ -1,31 +1,22 @@
-body {
-  background-color: #fbf9f5;;; /* Match the cream color of the image background */
+/* Reset */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.image-right {
-  display: flex;
-  justify-content: flex-end; /* Aligns the image to the right */
-  margin-left: 700px; /* Add space from the right edge */
-  max-width: 40%;
-  margin-top: -310px;
-}
-.image-style {
-  width: 100%; /* Ensures the image fills the container */
-  height: auto; /* Maintains aspect ratio */
+body {
+  background-color: #fbf9f5; /* Match the cream color of the image background */
+  font-family: Arial, sans-serif;
 }
 
-.image-right img {
-  max-width: 400px; /* Adjust image size */
-  height: auto;
-}
-
+/* Header styles */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -34,15 +25,15 @@ header {
 }
 
 .logo-img {
-  width: 150px; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 150px;
+  height: auto;
 }
-
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -53,23 +44,28 @@ header {
 }
 
 .nav-links li a:hover {
-  background-color: pink; /* Change to pink on hover */
+  background-color: #e6007e; /* Change to pink on hover */
 }
+
+/* Search and download button */
 .search-download {
   display: flex;
-  flex-direction: column; /* Stack search form and download button */
-  align-items: flex-start; /* Align to the left */
+  flex-direction: column;
+  align-items: flex-start;
+
 }
 
 .search-form {
   display: flex;
+
 }
 
 .search-form input {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 200px; /* Set a fixed width for the search input */
+  flex-grow: 1;
+ 
 }
 
 .search-button {
@@ -78,73 +74,66 @@ header {
   cursor: pointer;
   padding: 0 5px;
 }
+
 .download-button {
   background-color: #e6007e; /* Dark pink */
   border: none;
   color: white;
-  padding: 10px 0; /* Adjust vertical padding to match the search input */
+  padding: 10px 20px; /* Adjust padding for more space inside the button */
   border-radius: 5px;
   cursor: pointer;
-  width: 200px; /* Set width equal to the search form */
+  width: 180px; /* Increase the width of the button */
   margin-top: 5px; /* Space between search form and download button */
 }
 .download-button:hover {
-  background-color: #c7006e; /* Even darker pink on hover */
+  background-color: #e6007e; /* Darker pink */
 }
 
+/* Tagline styles */
 .tagline {
-  text-align: left; /* Align text to the left */
-  font-weight: bold;  /* Make all text bold */
-  text-transform: uppercase; /* All capital letters */
-  font-size: 36px; /* Increase the font size */
-  margin-left: 20px; /* Add some left margin for spacing */
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 36px;
+  margin-left: 20px;
 }
 
+.pink { color: rgb(232, 49, 205); }
+.orange { color: rgb(255, 42, 0); }
+.light-blue { color: rgb(28, 222, 229); }
+.blue { color: rgb(28, 222, 229); }
 
-.pink {
-  color: rgb(232, 49, 205); /* Pink color for specified letters */
-  margin-left: 35px;
-}
-
-.orange {
-  color: rgb(255, 42, 0); /* Orange color for specified letters */
-  margin-left: 30px;
-  
+p {
+  margin-left: 20px;
+  line-height: 1.6;
 }
 
-.light-blue {
-  color: rgb(28, 222, 229); /* Light blue color for specified letters */
-  margin-left: 60px;
-}
-.blue {
-  color: rgb(28, 222, 229); /* First word in blue */
-  margin-left: 35px;
-}
-p{
-  margin-left: 45px;
+/* Image section */
+.image-right {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
+.image-style {
+  width: 100%;
+  max-width: 400px;
+  margin-top: -350px;
+  margin-right: -700px;
+}
+
+/* Footer text */
 .zap-ready {
-  text-align: right; /* Aligns the text to the right */
-  font-weight: bold; /* Makes the font bold */
-  font-size: 24px; /* Adjusts the font size (change as needed) */
-  margin-top: 60px; /* Adds space between the image and this text */
-  margin-right: 80px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 40px;
+  color: rgb(255, 81, 0); /* Orange */
 }
 
-.orange {
-  color: rgb(255, 81, 0); /* Sets the color for the first word */
+.zap-ready span.light-blue {
+  color: rgb(32, 228, 222); /* Light blue */
 }
-
-.pink {
-  color: rgb(245, 12, 160); /* Sets the color for the second word */
-}
-
-.light-blue {
-  color: rgb(32, 228, 222); /* Sets the color for the third word */
-}
-
-
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -159,7 +148,37 @@ p{
   }
 
   .search-download {
-      flex-direction: column;
-      align-items: flex-start;
+      width: 100%;
+  }
+
+  .tagline {
+      font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tagline {
+      font-size: 24px;
+  }
+
+  p {
+      margin-left: 10px;
+  }
+
+  .image-right {
+    display: flex;
+ 
+    justify-content: flex-end;
+    margin-top: -300px; 
+  }
+
+  .image-style {
+      max-width: 400px;
+height:  auto;
+  }
+
+  .zap-ready {
+      font-size: 20px;
+      margin-top: 20px;
   }
 }
